@@ -1,0 +1,136 @@
+//== Fonts:
+$emBase: 10px;
+$font-family-sans-serif:  -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-size-base:          12px !default;
+$line-height-base:        20/15 !default; // 1.428571429 !default; // 20/14
+
+
+//== Colors:
+$brand-primary: #ff5454;
+$brand-overlay-color: rgba(255, 84, 84, 0.5);;
+
+$brand-success: #2d9b73;
+$brand-success-dark: #064f44; // 1e9c6e
+
+$brand-info:    #1fb7f5;
+$brand-info-dark: #020b79;
+
+$brand-warning: #fff882;
+$brand-warning-dark: #fdbe32;
+
+$brand-danger: #fda2b2;
+$brand-danger-dark: #fc5e61;
+
+$gray: #e6e6e6;
+$gray-dark: #787878;
+
+$link-color: #ff5454;
+$text-color: black;
+
+$alto: #d2d2d2;
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+$grid-columns:              12 !default;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         16px;
+
+
+
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+// Note: Deprecated $screen-xs and $screen-phone as of v3.0.1
+$screen-xs:                  480px !default;
+$screen-xs-min:              $screen-xs !default;
+$screen-phone:               $screen-xs-min !default;
+
+// Extra small screen / phone
+// Note: Deprecated $screen-xs-2 and $screen-phone as of v3.0.1
+$screen-xs-2:                  640px !default;
+$screen-xs-2-min:              $screen-xs-2 !default;
+$screen-phone:               $screen-xs-2-min !default;
+
+// Small screen / tablet
+// Note: Deprecated $screen-sm and $screen-tablet as of v3.0.1
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+$screen-tablet:              $screen-sm-min !default;
+
+// Medium screen / desktop
+// Note: Deprecated $screen-md and $screen-desktop as of v3.0.1
+$screen-md:                  1024px !default;
+$screen-md-min:              $screen-md !default;
+$screen-desktop:             $screen-md-min !default;
+
+// Large screen / wide desktop
+// Note: Deprecated $screen-lg and $screen-lg-desktop as of v3.0.1
+$screen-lg:                  1396px !default;
+$screen-lg-min:              $screen-lg !default;
+$screen-lg-desktop:          $screen-lg-min !default;
+
+// Extra Large screen / wide desktop
+$screen-xl:                  1600px !default;
+$screen-xl-min:              $screen-xl !default;
+$screen-xl-desktop:          $screen-xl-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xxs-max:              ($screen-xs-min - 1) !default;
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+$screen-lg-max:              ($screen-xl-min - 1) !default;
+
+
+
+// CUSTOM VARIABLES
+
+// Media queries
+$xSmall: "(min-width: #{$screen-xs-min})";
+$xSmall2: "(min-width: #{$screen-xs-2-min})";
+$small: "(min-width: #{$screen-sm-min})";
+$medium: "(min-width: #{$screen-md-min})";
+$large: "(min-width: #{$screen-lg-min})";
+$xLarge: "(min-width: #{$screen-xl-min})";
+$smallDown: "(max-width: #{$screen-sm-max})";
+$xSmallDown: "(max-width: #{$screen-xs-max})";
+$xxSmallDown: "(max-width: #{$screen-xxs-max})";
+$landscape: "(orientation: landscape)";
+$portrait: "(orientation: portrait)";
+
+// Media queries by name
+$mobileOnly: "(max-width: #{$screen-xs-max})"; // < 768
+$tabletOnly: "(min-width: #{$screen-sm-min}) and (max-width: #{$screen-sm-max})"; // 768 <= width < 1024
+$tabletDown: "(max-width: #{$screen-sm-max})"; // < 1024
+$tabletUp: "(min-width: #{$screen-sm-min})"; // >= 768
+$desktopUp: "(min-width: #{$screen-md-min})"; // >= 1024
+$desktopLargeUp: "(min-width: #{$screen-lg-min})"; // >= 1396
+
+
+// Fonts
+$font-path:        "../fonts" !default;
+$the-branding-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$bodyFontSize: 12px;
+$bodyLineHeight: 17px;
+$bodyFontSizeDesktop: 13px;
+$bodyLineHeightDesktop: 20px;
+
+
+// Misc
+$headerHeight: 55px;
+$headerHeightDesktop: 55px;
+$sidePadding: 15px;
+$sidePaddingDesktop: 34px;
+$searchHeight: 75px;
+$searchHeightDesktop: 80px;
+$sideNavHeaderHeight: 60px;
+$secondLevelHeight: 60px;
+$moduleMarginRightDesktop:-34px;
+$moduleMarginRight:-15px;
+$moduleMarginTop:100px;
+$moduleMarginTopDesktop:120px;
+$moduleMaxWidthDesktop: 550px;

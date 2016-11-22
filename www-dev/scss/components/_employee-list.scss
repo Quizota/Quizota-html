@@ -1,0 +1,136 @@
+.employee-list {
+	margin-top: $moduleMarginTop;
+	h2 {
+		max-width: $moduleMaxWidthDesktop;
+	}
+	p {
+		margin-top: 35px;
+		a{
+			color: #000;
+			font-weight: bold;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+	.btn-normal {
+		margin-top: 26px;
+		width: 100%;
+		text-align: center;
+		background: $link-color;
+		color: #fff;
+		font-family: $the-branding-font;
+		font-weight: 600;
+		font-size: 19px;
+		transition: all ease-in-out .25s;
+		height: 50px;
+		border: 0;
+		span {
+			font-size: 19px;
+			margin-left: 10px;
+			font-family: $font-family-sans-serif;
+			transition: all ease-in-out .25s;
+		}
+		&:hover {
+			background: #247c5c;
+		}
+	}
+	ul {
+		&.list {
+			li {
+				display: block;
+				margin-bottom: 22px;
+				.pic-employee {
+					float: left;
+					width: 81px;
+					height: 103px;
+					overflow: hidden;
+					margin-right: 35px;
+					img {
+						width: 100%;
+					}
+				}
+				.info-employee {
+					float: left;
+					width: 60%;
+					h5 {
+						margin: -2px 0 0;
+					}
+					p {
+						margin-bottom: 15px;
+						margin-top: 0;
+						&.first {
+							margin-top: 15px;
+						}
+						a {
+							color: $text-color;
+							transition: all ease-in-out .25s;
+							&:hover {
+							}
+							&.email{
+								color: #000;
+								font-weight: bold;
+								text-decoration: underline;
+								&:hover{
+									color: $link-color;
+									margin: 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media #{$desktopUp}{
+		margin-top: $moduleMarginTopDesktop;
+		h2 {
+			margin: 0;
+
+		}
+		p {
+			margin-top: 20px;
+		}
+		.btn-normal {
+			margin-bottom: 20px;
+			width: 220px;
+			height: 40px;
+			font-family: $font-family-sans-serif;
+			font-size: 13px;
+			font-weight: 700;
+			span {
+				font-size: 11px;
+			}
+		}
+		ul {
+			&.list {
+				margin-top: 50px;
+				li {
+					margin-bottom: 50px;
+					.pic-employee {
+						width: 130px;
+						height: 167px;
+					}
+					.info-employee {
+						h5 {
+							margin: -4px 0 0;
+						}
+						p {
+							&.first {
+								margin-top: 0;
+							}
+							font-size: 13px;
+							line-heihgt: 20px;
+							&.first {
+								margin-top: 0;
+							}
+						}
+					}
+				}
+
+			}
+		}
+	}
+
+}

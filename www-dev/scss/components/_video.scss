@@ -1,0 +1,130 @@
+@mixin fl{
+	position: relative;
+	float: left;
+}
+@mixin flw($w) {
+	position: relative;
+	float: left;
+	width: $w;
+}
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+.standard-page{
+	.video-modules{
+		.video{
+			cursor: pointer;
+			margin-bottom: 16px;
+			padding: 0;
+			video{
+				@include flw(100%);
+				height: 580px;
+				background: #000;
+				opacity: 0;
+				&.active{
+					opacity: 1;
+				}
+			}
+			.video-overlay{
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+			.video-action{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				padding: 20px 30px;
+				background-image: -webkit-linear-gradient(top,rgba(0,0,0,.0001) 0,rgba(0,0,0,.9) 100%);
+			    background-image: -o-linear-gradient(top,rgba(0,0,0,.0001) 0,rgba(0,0,0,.9) 100%);
+			    background-image: -webkit-gradient(linear,top,bottom,from(rgba(0,0,0,.0001)),to(rgba(0,0,0,.9)));
+			    background-image: linear-gradient(to bottom,rgba(0,0,0,.0001) 0,rgba(0,0,0,.9) 100%);
+				img,span{
+					@include fl;
+					@include transition(all ease-in-out .25s);
+				}
+				img{
+					width: 38px;
+					color: #fff;
+				}
+				span{
+					line-height: 38px;
+					margin-left: 20px;
+					font-family: $font-family-sans-serif;
+					font-size: 13px;
+					font-weight: bold;
+					color: #fff;
+				}
+			}
+			&:hover{
+				.video-action{
+					span{
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+
+
+		@media #{$desktopUp}{
+			margin-right: -$sidePaddingDesktop;
+		}
+
+
+		@media #{$tabletDown}{
+			.video{
+				video{
+					height: 420px;
+				}
+			}
+		}
+		@media #{$mobileOnly}{
+			.video{
+				video{
+					height: 195px;
+				}
+				.video-overlay{
+					left: 0 !important;
+					right: 0 !important;
+					bottom: 30px;
+				}
+				.video-action{
+					width: 100%;
+					height: 100%;
+					padding: 0;
+					background: none;
+					bottom: auto;
+					top: 50%;
+					right: auto !important;
+					left: 50% !important;
+					@include transform(translate(-50%,-50%));
+					img{
+						left: 50%;
+						top: 50%;
+						margin-top: -15px;
+						@include transform(translate(-50%,-50%));
+					}
+					span{
+						position: absolute;
+						margin-left: 0;
+						left: 50%;
+						bottom: 0;
+						@include transform(translateX(-50%));
+						color: #000;
+						font-size: 11px;
+						line-height: 12px;
+						font-weight: bold;
+					}
+				}
+			}
+		}
+
+
+	}
+}
+

@@ -1,0 +1,273 @@
+.schedule-container {
+	background: #064f44 !important;
+	padding-bottom: 47px;
+	h2 {
+		color: #fff;
+		margin-top: 37px;
+		margin-bottom: 40px;
+	}
+	small {
+		color: #fff;
+		opacity: .3;
+	}
+	.content-schedule {
+		//width: 100%;
+		margin-left: -$sidePadding;
+		margin-right: -$sidePadding;
+		//overflow-x: scroll;
+		margin-bottom: 16px;
+
+		overflow: hidden;
+		background: #064f44 ;
+		//@include invisible-scrollbar;
+		//overflow: scroll;
+		.scroll-box {
+			overflow-x: scroll;
+			-webkit-overflow-scrolling: touch;
+			padding-bottom: 13px;
+			margin-bottom: -16px;
+		}
+		&::-webkit-scrollbar, &::-webkit-scrollbar-track {
+			display: none;
+		}
+
+		.tbl-schedule {
+			width: 870px;
+			border-right: $sidePadding solid #064f44;
+			border-left: $sidePadding solid #064f44;
+			tr {
+				td, th {
+					text-align: center;
+				}
+				&.head {
+					th {
+						height: 25px;
+						background-color: #2d9b73;
+						color: #fff;
+						font-size: 15px;
+						font-weight: 700;
+						font-family: $the-branding-font;
+						vertical-align: bottom;
+						border-right: 1px solid #064f44;
+						&:nth-child(2) {
+							border-right: 0;
+						}
+						&:last-child {
+							border-right: 0;
+							border-left: 1px dotted #064f44;
+						}
+					}
+				}
+				&.note {
+					th {
+						height: 27px;
+						background-color: #2d9b73;
+						color: #064f44;
+						font-size: 10px;
+						font-weight: 700;
+						font-family: $font-family-sans-serif;
+						vertical-align: middle;
+						position: relative;
+						border-right: 1px solid #064f44;
+						&:before {
+							content: '';
+							position: absolute;
+							height: 1px;
+							background-color: #064f44;
+							opacity: .25;
+							width: 30%;
+							left: 15px;
+							top: 50%;
+						}
+						&:after {
+							content: '';
+							position: absolute;
+							height: 1px;
+							background-color: #064f44;
+							opacity: .25;
+							width: 30%;
+							right: 15px;
+							top: 50%;
+						}
+						&:last-child {
+							border-right: 0;
+							&:before {
+								width: 35%;
+							}
+							&:after {
+								width: 35%;
+							}
+						}
+					}
+				}
+				&.semesters {
+					td {
+						height: 29px;
+						color: #fff;
+						font-size: 10px;
+						font-weight: 700;
+						font-family: $font-family-sans-serif;
+						border-top: 1px solid #064f44;
+						border-right: 1px solid #064f44;
+						&:nth-child(2n) {
+							background-color: #387269;
+						}
+						&:nth-child(2n+1) {
+							background-color: #1a5c52;
+						}
+						&:last-child {
+							border-right: 0;
+						}
+					}
+				}
+				&.semester-schedule {
+					td {
+						width: 145px;
+						border-top: 1px solid #064f44;
+						border-right: 1px solid #064f44;
+						color: #000;
+						font-size: 10px;
+						font-weight: normal;
+						font-family: $font-family-sans-serif;
+						padding: 10px 15px;
+						line-height: 12px;
+						&:last-child {
+							border-right: 0;
+						}
+						&:nth-child(2n) {
+							background-color: #e6e6e6;
+						}
+						&:nth-child(2n+1) {
+							background-color: #d2d2d2;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.kandidat {
+		.content-schedule {
+			.tbl-schedule {
+				tr {
+					&.head {
+						th {
+							vertical-align: middle;
+							height: 50px;
+						}
+
+					}
+
+					&.semesters {
+						td {
+							span {
+								opacity: .5;
+								font-weight: normal;
+							}
+						}
+					}
+					&.semester-schedule {
+						td {
+							&:nth-child(2n) {
+								background-color: #ebebeb;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	@media #{$desktopUp}{
+		padding-bottom: 90px;
+		h2 {
+			margin-top: 83px;
+			margin-bottom: 44px;
+		}
+		.content-schedule {
+			overflow-x: hidden;
+			margin-bottom: 30px;
+			.scroll-box {
+				overflow-x: hidden !important;
+				padding-bottom: 0;
+				margin-bottom:0;
+			}
+			.tbl-schedule {
+				width: 100%;
+				tr {
+					&.head {
+						th {
+							height: 48px;
+							font-size: 28px;
+						}
+					}
+					&.note {
+						th {
+							height: 53px;
+							font-size: 13px;
+							&:before {
+								width: 30%;
+							}
+							&:after {
+								width: 30%;
+							}
+							&:last-child {
+								&:before {
+									width: 35%;
+								}
+								&:after {
+									width: 35%;
+								}
+							}
+						}
+					}
+					&.semesters {
+						td {
+							height: 39px;
+							font-size: 13px;
+						}
+					}
+					&.semester-schedule {
+						td {
+							width: auto;
+							font-size: 11px;
+							padding: 30px 17px;
+							line-height: 13px;
+						}
+					}
+				}
+			}
+		}
+		&.kandidat {
+			.content-schedule {
+				.tbl-schedule {
+					tr {
+						&.head {
+							th {
+								height: 80px;
+							}
+						}
+
+						&.semesters {
+							td {
+								height: auto;
+								padding: 15px 0;
+							}
+						}
+						&.semester-schedule {
+							td {
+
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	@media #{$mobileOnly}{
+			.content-schedule{
+				overflow-x: scroll;
+				&::-webkit-scrollbar, &::-webkit-scrollbar-track {
+					display: none;
+				}
+			}
+	}
+}

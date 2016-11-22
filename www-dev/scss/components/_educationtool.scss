@@ -1,0 +1,495 @@
+@mixin fl{
+  position: relative;
+  float: left;
+}
+@mixin flw($w) {
+  position: relative;
+  float: left;
+  width: $w;
+}
+@mixin posa($top,$bottom,$left,$right) {
+  position: absolute;
+  top: $top;
+  bottom: $bottom;
+  left: $left;
+  right: $right;
+}
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+
+.full-page{
+  .education-tool-box{
+    height: 500px;
+    background: #222;
+  }
+  .education-tool-modules{
+    @include posa(auto,70px,50%,0);
+    @include transform(translateX(-50%));
+    width: 77.777777%;
+    max-width: 1086px;
+    height: 70px;
+    .parent{
+      @include posa(0,0,0,0);
+      .back{
+        @include posa(0,0,0,auto);
+        background: #757574;
+        line-height: 70px;
+        color: #fff;
+        width: 40px;
+        text-align: center;
+        display: none;
+        opacity: 0;
+        cursor: pointer;
+        &.active{
+          display: block;
+          @include animation(showback .2s linear .6s forwards);
+        }
+        &.close{
+          display: block;
+          @include animation(hideback .2s linear 0s forwards);
+        }
+        &:hover{
+          background: #565655;
+        }
+      }
+      // level 1
+      .education-btn{
+        &.level1{
+          @include posa(0,0,50%,auto);
+          @include transform(translateX(-50%));
+          &.active{
+            @include animation(enlarge33100 .5s ease .2s forwards);
+            span{
+              @include animation(hide .2s linear 0s forwards);
+            }
+          }
+          &.close{
+            @include calc(width,'33.333333% + 2px');
+            opacity: 0;
+            // width: 100%;
+            @include animation(show 0s ease .7s forwards);
+            span{
+              opacity: 0;
+              @include animation(show .2s linear .7s forwards);
+            }
+          }
+        }
+        &:hover{
+          background: #247c5c;
+        }
+        background: $brand-success;
+        line-height: 70px;
+        width: 33.333333%;
+        text-align: center;
+        font-size: 16px;
+        font-family: $the-branding-font;
+        font-weight: 600;
+        color: #fff;
+        cursor: pointer;
+        span, a{
+          @include posa(0,0,0,0);
+          b{
+            margin-left: 10px;
+            font-weight: 600;
+          }
+        }
+      }
+      // level 2,3
+      .education-btn-box{
+        display: none;
+        @include posa(0,0,50%,auto);
+        @include transform(translateX(-50%));
+        width: 33.333333%;
+        .education-btn{
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 33.333333%;
+          a, span{
+            opacity: 0;
+            color: #fff;
+          }
+        }
+        &.level2{
+          &.active{
+            display: block;
+            opacity: 0;
+            z-index: -1;
+            @include animation(enlarge3310 .5s ease .2s forwards);
+            .education-btn{
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              width: 50%;
+              @include animation(enlarge5033 .5s ease .2s forwards);
+              &:nth-of-type(2){
+                width: 0;
+                left: 50%;
+                @include transform(translateX(-50%));
+                @include animation(enlarge0033 .5s ease .2s forwards);
+              }
+              &:first-of-type{
+                left: -1px;
+              }
+              &:last-of-type{
+                right: -1px;
+              }
+              span{
+                @include animation(show .2s linear .6s forwards);
+              }
+            }
+          }
+          &.close{
+            .education-btn{
+              width: 33.333333%;
+              @include animation(enlarge3350 .5s ease .25s forwards);
+              &:nth-of-type(2){
+                width: 33.333333%;
+                @include animation(enlarge3300 .5s ease .25s forwards);
+              }
+              span{
+                @include animation(hide .2s linear 0s forwards);
+              }
+            }
+          }
+          &.close2{
+            display: block;
+            opacity: 1;
+            z-index: -1;
+            width: 100%;
+            // @include animation(enlarge1033 .5s ease .2s forwards);
+            .education-btn{
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              width: 33.333333%;
+              // @include animation(enlarge33167 .5s ease .2s forwards);
+              &:nth-of-type(2){
+                width: 33.333333%;
+                left: 50%;
+                @include transform(translateX(-50%));
+                @include animation(enlarge3300 .5s ease .2s forwards);
+              }
+              &:first-of-type{
+                @include calc(right,'66.666667% + 1px');
+                @include animation(enlarge33167left .5s ease .2s forwards);
+              }
+              &:last-of-type{
+                @include calc(left,'66.666667% + 1px');
+                @include animation(enlarge33167right .5s ease .2s forwards);
+              }
+              span{
+                opacity: 1;
+                @include animation(hide .2s linear 0s forwards);
+              }
+            }
+          }
+        }
+        &.level3{
+          @include calc(width,'100% + 2px');
+          .education-btn{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            &:first-of-type{
+              left: 0px;
+            }
+            &:last-of-type{
+              right: -1px;
+            }
+          }
+          &.active{
+            display: block;
+            z-index: -1;
+            @include animation(zindexup 0s ease .25s forwards);
+            .education-btn{
+              @include animation(enlarge3350 .5s ease .25s forwards);
+              a{
+                @include animation(show .2s linear .8s forwards);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// START KEY FRAMES DESKTOP --------------
+@include keyframes(enlarge3310) {
+  0%{ width: 33.333333%; opacity: 0;  z-index: -1;};
+  1%{width: 33.333333%; opacity: 1;}
+  100%{ width: 100%; opacity: 1; z-index: auto;};
+}
+@include keyframes(zindexup) {
+  0%{ z-index: -1;};
+  100%{ z-index: auto;};
+}
+
+@include keyframes(enlarge33100) {
+  0%{ width: 33.333333%; opacity: 1;};
+  1%{width: 33.333333%; opacity: 0;}
+  100%{ width: 100%; opacity: 0;};
+}
+
+@include keyframes(enlarge1033) {
+  0%{ width: 100%; opacity: 0;};
+  1%{width: 100%; opacity: 1;}
+  100%{ width: 33.333333%; opacity: 1;};
+}
+
+@include keyframes(enlarge5033) {
+  0%{ width: 50%;};
+  100%{ width: 33.333333%;};
+}
+@include keyframes(enlarge3350) {
+  0%{ width: 33.333333%};
+  100%{ width: 50%};
+}
+@include keyframes(enlarge0033) {
+  0%{ width: 0%};
+  100%{ width: 33.333333%};
+}
+@include keyframes(enlarge3300) {
+  0%{ width: 33.333333%};
+  100%{ width: 0%};
+}
+@include keyframes(enlarge33167left) {
+  0%{ width: 33.333333%; @include calc(right,'66.666667% + 1px');};
+  100%{ width: 16.666667%; @include calc(right,'50% + 1px');};
+}
+@include keyframes(enlarge33167right) {
+  0%{ width: 33.333333%; @include calc(left,'66.666667% + 1px');};
+  100%{ width: 16.666667%; @include calc(left,'50% + 1px');};
+}
+@include keyframes(show) {
+  0%{ opacity: 0;};
+  100%{ opacity: 1;};
+}
+@include keyframes(hide) {
+  0%{ opacity: 1;};
+  100%{ opacity: 0;};
+}
+@include keyframes(showback) {
+  0%{ left: 0; opacity: 0;};
+  1%{ left: 0; opacity: 1;};
+  100%{ left: -42px; opacity: 1;};
+}
+@include keyframes(hideback) {
+  0%{ left: -42px; opacity: 1;};
+  99%{ left: 0px; opacity: 1;};
+  100%{ left: 0px; opacity: 0;};
+}
+// END KEY FRAMES DESKTOP --------------
+
+
+@media #{$mobileOnly}{
+  .full-page{
+    .education-tool-modules{
+      height: 55px;
+      left: 15px;
+      right: 15px;
+      width: auto;
+      @include transform(none);
+      .parent{
+        .back{
+          width: 30px;
+          line-height: 50px;
+          height: 50px;
+          @include transform(rotate(-90deg) translateX(-50%));
+          @include calc(left,'50% - 15px');
+          top: auto;
+          bottom: 5px;
+          &.active{
+            @include animation(showbackmobile .2s ease .6s forwards);
+          }
+          &.close{
+            display: block;
+            @include animation(hidebackmobile .2s ease 0s forwards);
+          }
+        }
+        .education-btn{
+          width: 100% !important;
+          line-height: 55px;
+          font-size: 15px;
+          &.level1{
+            &.active{
+              width: 100% !important;
+              @include animation(none);
+            }
+            &.close{
+              top: auto;
+              height: 55px;
+              @include animation(show 0s ease .8s forwards);
+              span{
+                opacity: 0;
+                @include animation(show .2s linear .8s forwards);
+              }
+            }
+          }
+        }
+        .education-btn-box{
+          top: auto;
+          width: 100%;
+          height: 55px;
+          .education-btn{
+
+          }
+          &.level2{
+            &.active{
+              opacity: 1;
+              z-index: auto;
+              @include animation(none);
+              .education-btn{
+                width: 100% !important;
+                left: 0 !important;
+                right: 0 !important;
+                line-height: 55px;
+                height: 55px;
+                top: auto;
+                &:nth-of-type(1){
+                  @include animation(none);
+                }
+                &:nth-of-type(2){
+                  @include transform(none);
+                  @include animation(movestep1 .5s ease .25s forwards);
+                  bottom: 57px;
+                  height: 0;
+                }
+                &:nth-of-type(3){
+                  bottom: 57px;
+                  height: 0;
+                  @include animation(movestep2 .5s ease .25s forwards);
+                }
+              }
+              &.close{
+                .education-btn{
+                  &:nth-of-type(2){
+                    height: 55px;
+                    bottom: 57px;
+                    @include animation(removestep1 .5s ease .25s forwards);
+                  }
+                  &:nth-of-type(3){
+                    height: 55px;
+                    bottom: 114px;
+                    @include animation(removestep2 .5s ease .25s forwards);
+                  }
+                }
+              }
+            }
+            &.close2{
+              opacity: 1;
+              z-index: 1;
+              @include animation(zindexdown 0s linear .8s forwards);
+              .education-btn{
+                width: 100% !important;
+                left: 0 !important;
+                right: 0 !important;
+                line-height: 55px;
+                height: 55px;
+                top: auto;
+                &:nth-of-type(1){
+                  @include animation(none);
+                }
+                &:nth-of-type(2){
+                  @include transform(none);
+                  @include animation(hidemovestep1 .5s ease .25s forwards);
+                  bottom: 57px;
+                  height: 55px;
+                }
+                &:nth-of-type(3){
+                  bottom: 114px;
+                  height: 55px;
+                  @include animation(hidemovestep2 .5s ease .25s forwards);
+                }
+              }
+            }
+          }
+          &.level3{
+            &.active{
+              .education-btn{
+                left: 0 !important;
+                right: 0 !important;
+                top: auto;
+                width: 100%;
+                height: 55px;
+                opacity: 0;
+                @include animation(show 0s linear .7s forwards);
+                &:nth-of-type(2){
+                  bottom: 57px;
+                  @include animation(show 0s linear .7s forwards);
+                }
+              }
+            }
+            &.close{
+              display: block;
+              @include animation(zindexdown 0s linear .4s forwards);
+              .education-btn{
+                left: 0 !important;
+                right: 0 !important;
+                top: auto;
+                width: 100%;
+                height: 55px;
+                opacity: 0;
+                @include animation(show 0s linear .7s forwards);
+                &:nth-of-type(2){
+                  bottom: 57px;
+                  @include animation(show 0s linear .7s forwards);
+                }
+                span{
+                  @include animation(hide .2s linear 0s forwards);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// START KEY FRAMES MOBILE --------------
+@include keyframes(end) {
+  0%{ height: 169px;}
+  100%{ height: 55px;}
+}
+@include keyframes(movestep1) {
+  0%{ height: 0;}
+  100%{ height: 55px;}
+}
+@include keyframes(hidemovestep1) {
+  0%{ height: 55;}
+  100%{ height: 0px;}
+}
+@include keyframes(movestep2) {
+  0%{ bottom: 57px; height: 0;}
+  100%{ bottom: 114px; height: 55px;}
+}
+@include keyframes(hidemovestep2) {
+  0%{ bottom: 114px; height: 55px;}
+  100%{ bottom: 57px; height: 0px;}
+}
+@include keyframes(removestep1) {
+  0%{ height: 55px;}
+  100%{ height: 0;}
+}
+@include keyframes(removestep2) {
+  0%{ bottom: 114px;}
+  100%{ bottom: 57px;}
+}
+@include keyframes(showbackmobile) {
+  0%{ opacity: 1; bottom: 5px;};
+  100%{ opacity: 1; bottom: -27px;};
+}
+@include keyframes(hidebackmobile) {
+  0%{ opacity: 1; bottom: -27px;};
+  100%{ opacity: 1; bottom: 5px;};
+}
+@include keyframes(zindexdown) {
+  0%{ z-index: auto;};
+  100%{ z-index: -1;};
+}
+// END KEY FRAMES MOBILE --------------

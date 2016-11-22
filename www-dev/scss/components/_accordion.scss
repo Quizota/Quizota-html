@@ -1,0 +1,226 @@
+.accordion-module {
+	margin-top: $moduleMarginTop;
+	h2 {
+		max-width: $moduleMaxWidthDesktop;
+	}
+	.description {
+		margin-top: 35px;
+		margin-bottom: 40px;
+		max-width: $moduleMaxWidthDesktop;
+	}
+
+	//accordion
+	.accordion {
+		border-bottom: 1px solid #c2c2c2;
+		padding-top: 7px;
+		margin-bottom: 33px;
+		> li {
+			border-top: 1px solid #c2c2c2;
+			position: relative;
+			padding: 15px 0;
+			hr {
+				clear: both;
+				margin: 0;
+				padding: 0;
+				border: 0;
+			}
+			.link {
+				cursor: pointer;
+				font-family: $font-family-sans-serif;
+				font-size: 12px;
+				font-weight: 700;
+				margin-top: 0;
+				margin-bottom: 0;
+				width: 100%;
+				&:after {
+					content: '';
+					display: inline-block;
+					//position: relative;
+					right: 12px;
+					float: right;
+					background-image: url(../../img/modules/plus-minus-mobile.png);
+					background-repeat: no-repeat;
+					background-position: top left;
+					width: 9px;
+					height: 9px;
+					margin-top: 3px;
+					position: absolute;
+				}
+				&:hover {
+					span {
+						color: #40b88c;
+					}
+					&:after {
+						background-image: url(../../img/modules/plus-minus-mobile.png);
+						background-repeat: no-repeat;
+						background-position: -18px 0;
+					}
+				}
+				&.active {
+					span {
+						color: #000;
+					}
+
+				}
+
+				span {
+					&:first-child {
+						margin-top: 0;
+						float: left;
+						@include transition(margin .5s);
+						max-width: 92%;
+						white-space: nowrap;
+						overflow: hidden;
+					}
+				}
+				&.active {
+					font-family: $the-branding-font;
+					font-weight: 600;
+					margin-bottom: 17px;
+					//@include transform(translateY(20px));
+					span {
+						&:first-child {
+							margin-top: 20px;
+						}
+					}
+
+					&:after {
+						content: '';
+						background-image: url(../../img/modules/plus-minus-mobile.png);
+						background-repeat: no-repeat;
+						background-position: -9px 0;
+						width: 9px;
+						height: 9px;
+					}
+					&:hover {
+						span {
+							color: #40b88c;
+						}
+						&:after {
+							background-image: url(../../img/modules/plus-minus-mobile.png);
+							background-repeat: no-repeat;
+							background-position: -27px 0;
+						}
+					}
+
+				}
+
+			}
+			div.accordion-cont {
+				display: none;
+				opacity: 0;
+				clear: both;
+				padding-bottom: 15px;
+				max-width:550px;
+				@include transition(transform ease-in-out 1s , opacity .25s 0s);
+				&.open {
+					opacity: 1;
+					margin-bottom: 20px;
+					@include transition(transform ease-in-out 1s, opacity .5s .5s);
+					margin-top:20px;
+				}
+
+				p {
+					color: #323232;
+					a {
+						color: #40b88c;
+						font-weight: 700;
+					}
+
+				}
+			}
+			&.close{
+				.accordion-cont{
+					display: none !important;
+				}
+			}
+		}
+		a {
+			color: #000;
+			&:hover {
+				color: #000;
+			}
+		}
+	}
+
+	@media #{$desktopUp}{
+		margin-top: $moduleMarginTopDesktop;
+		.description {
+			margin-top: 0;
+			margin-bottom: 45px;
+		}
+		.accordion {
+			> li {
+				.link {
+					font-family: $the-branding-font;
+					font-size: 16px;
+					font-weight: 600;
+					&:after {
+						content: '';
+						display: inline-block;
+						//position: relative;
+						right: 25px;
+						float: right;
+						background-image: url(../../img/modules/plus-minus.png);
+						background-repeat: no-repeat;
+						background-position: top left;
+						width: 16px;
+						height: 16px;
+						margin-top: 3px;
+						position: absolute;
+					}
+
+					&:hover {
+						span {
+							color: #40b88c;
+						}
+						&:after {
+							background-image: url(../../img/modules/plus-minus.png);
+							background-repeat: no-repeat;
+							background-position: -32px 0;
+						}
+					}
+					&.active {
+						&:after {
+							content: '';
+							background-image: url(../../img/modules/plus-minus.png);
+							background-repeat: no-repeat;
+							background-position: -16px 0;
+							width: 16px;
+							height: 16px;
+						}
+						&:hover {
+							span {
+								color: #40b88c;
+							}
+							&:after{
+								background-image: url(../../img/modules/plus-minus.png);
+								background-repeat: no-repeat;
+								background-position:-48px 0;
+							}
+						}
+						span {
+							&:first-child {
+								margin-top: 58px;
+							}
+						}
+					}
+				}
+				div.accordion-cont {
+					max-width:550px;
+					p {
+						font-size: 15px;
+						line-height: 24px;
+						&:last-child {
+							margin-top: 20px;
+							margin-bottom: 40px;
+						}
+					}
+					&.open {
+						margin-top: 26px;
+					}
+				}
+			}
+		}
+	}
+}

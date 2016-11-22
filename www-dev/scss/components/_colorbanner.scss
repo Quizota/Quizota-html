@@ -1,0 +1,176 @@
+@mixin fl{
+	position: relative;
+	float: left;
+}
+@mixin flw($w) {
+	position: relative;
+	float: left;
+	width: $w;
+}
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+.full-page{
+	.color-banner-modules{
+		.color-banner{
+			padding: 120px 35px 80px;
+			h1,a{
+				@include flw(100%);
+			}
+			h1{
+				font-size: 80px;
+				line-height: 100px;
+				margin: 0 0 80px;
+				color: #fff;
+				max-width: 80%;
+			}
+			a{
+				width: auto;
+				text-align: center;
+				padding:0 40px;
+				line-height: 40px;
+				font-size: 13px;
+				font-family: $font-family-sans-serif;
+				font-weight: bold;
+				color: #fff;
+				background: #353c94;
+				clear: left;
+				span{
+					margin-left: 10px;
+				}
+				&:hover:after{
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					background: rgba(255,255,255,0.2);
+				}
+			}
+			&.blue{
+				background: $brand-info-dark;
+			}
+			&.pink{
+				background: $brand-danger-dark;
+				a{
+					background: #fd7e81;
+				}
+			}
+			&.green{
+				background: #064f44;
+				a{
+					background: #387269;
+				}
+			}
+		}
+	}
+}
+.standard-page{
+	.color-banner-modules{
+		.color-banner{
+			padding: 80px 35px;
+			h1,a{
+				@include flw(100%);
+			}
+			h1{
+				font-size: 48px;
+				line-height: 58px;
+				margin: 0 0 80px;
+				color: #fff;
+				max-width: 80%;
+			}
+			a{
+				width: auto;
+				text-align: center;
+				padding:0 40px;
+				line-height: 40px;
+				font-size: 13px;
+				font-family: $font-family-sans-serif;
+				font-weight: bold;
+				color: #fff;
+				background: #353c94;
+				span{
+					margin-left: 10px;
+				}
+				&:hover:after{
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					background: rgba(255,255,255,0.2);
+				}
+			}
+			&.blue{
+				background: $brand-info-dark;
+			}
+			&.pink{
+				background: $brand-danger-dark;
+				a{
+					background: #fd7e81;
+				}
+			}
+			&.green{
+				background: #064f44;
+				a{
+					background: #387269;
+				}
+			}
+		}
+	}
+}
+
+
+@media #{$desktopUp}{
+	.standard-page{
+		.color-banner-modules{
+			margin-right: -$sidePaddingDesktop;
+		}
+	}
+}
+
+@media #{$tabletDown}{
+
+}
+@media #{$mobileOnly}{
+	.full-page{
+		.color-banner-modules{
+			.color-banner{
+				padding: 50px 15px 40px;
+				h1{
+					font-size: 27px;
+					line-height: 32px;
+					margin: 0 0 35px;
+				}
+				a{
+					font-size: 12px;
+					line-height: 45px;
+					padding: 0 20px;
+					width: 100%;
+				}
+			}
+		}
+	}
+	.standard-page{
+		.color-banner-modules{
+			.color-banner{
+				padding: 45px 15px 40px;
+				h1{
+					font-size: 27px;
+					line-height: 32px;
+					margin: 0 0 35px;
+				}
+				a{
+					line-height: 45px;
+					font-size: 12px;
+					padding: 0 20px;
+					width: 100%;
+				}
+			}
+		}
+	}
+}

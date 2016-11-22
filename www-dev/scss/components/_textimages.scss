@@ -1,0 +1,148 @@
+@mixin fl{
+	position: relative;
+	float: left;
+}
+@mixin flw($w) {
+	position: relative;
+	float: left;
+	width: $w;
+}
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+.full-page{
+	.text-image-modules{
+		.row{
+			& > .col-xs-12{
+				padding: 0;
+				&.blue{
+					background: #020b79;
+				}
+				&.green{
+					background: #064f44;
+				}
+			}
+		}
+		.left{
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 50%;
+			bottom: 0;
+			img{
+				@include flw(100%);
+			}
+		}
+		.right{
+			padding: 120px 35px;
+			h1, h5, p, a, span{
+				@include flw(100%);
+				color: #fff;
+			}
+			h1{
+				font-size: 48px;
+				line-height: 58px;
+				margin: 0 0 50px;
+				margin-left: -70px;
+				max-width:550px;
+			}
+			h5{
+				font-size: 16px;
+				line-height: 34px;
+ 				font-weight: 700;
+				margin: 0;
+			}
+			span{
+				font-size: 11px;
+				line-height: 18px;
+				margin: 0 0 30px;
+			}
+			p{
+				font-size: 15px;
+				line-height: 24px;
+				margin: 0 0 80px;
+			}
+			a{
+				width: auto;
+				line-height: 40px;
+				padding: 0 40px;
+				text-align: center;
+				background: #353c94;
+				color: #fff;
+				font-size: 13px;
+				font-family: $font-family-sans-serif;
+				font-weight: bold;
+				span{
+					float: none;
+					margin-left: 5px;
+					@include transition(all ease-in-out .25s);
+				}
+				&:hover:after{
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					background: rgba(255,255,255,0.2);
+				}
+			}
+		}
+	}
+}
+@media #{$tabletDown}{
+
+}
+@media #{$mobileOnly}{
+	.full-page{
+		.text-image-modules{
+			.row{
+				& > .col-xs-12{
+					padding: 17.5px 15px 55px;
+				}
+			}
+			.left{
+				position: relative;
+				top: auto;
+				left: auto;
+				right: auto;
+				bottom: auto;
+				&:after{
+					content: '';
+					display: block;
+					padding-bottom: 70%;
+				}
+			}
+			.right{
+				padding: 30px 0 0;
+				h1{
+					font-size: 21px;
+					line-height: 29px;
+					margin: 0 0 15px 0;
+				}
+				h5{
+					font-size: 14px;
+					line-height: 29px;
+				}
+				span{
+					font-size: 10px;
+					line-height: 12px;
+					margin-bottom: 25px;
+				}
+				p{
+					font-size: 12px;
+					line-height: 17px;
+					margin: 15px 0 37.5px;
+				}
+				a{
+					line-height: 45px;
+					padding: 0 20px;
+					width: 100%;
+					font-size: 12px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,68 @@
+.header-area {
+    padding-left: $sidePadding/2;
+    padding-right: $sidePadding/2;
+    color: #fff;
+    background: #020b79;
+    padding-top: 50px;
+    padding-bottom: 54px;
+
+    h1 {
+        font-size: 36px;
+        line-height: 44px;
+    }
+
+    &.second-level {
+        padding-top: 18px;
+        padding-bottom: 18px;
+        
+        h1 {
+            font-size: 22px;
+            line-height: 30px;
+        }
+    }
+
+    @media #{$desktopUp}{
+        padding-left: $sidePaddingDesktop;
+        padding-right: $sidePaddingDesktop;
+        .col-md-5 {
+            width: 58.3333333333%;
+        }
+    }
+
+    @media #{$desktopLargeUp}{
+        .col-md-5 {
+            width: 41.6666666667%;
+        }
+    }
+    
+    @media #{$tabletDown} {
+        padding-top: 33px;
+        padding-bottom: 45px;
+            
+        h1 {
+            font-size: 21px;
+            line-height: 26px;
+            margin-bottom: 8px;
+        }
+        h5 {
+            font-size: 14px;
+            line-height: 19px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        &.second-level {
+            padding-top: 36px;
+            padding-bottom: 38px;
+            h1 {
+                font-size: 14px;
+                line-height: 19px;
+                margin-bottom: 0px;
+                margin-top: 0px;
+            }
+        }
+
+    }
+
+
+}
+

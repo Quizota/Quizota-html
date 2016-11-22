@@ -1,0 +1,10 @@
+{
+  "name": "ruc.dk",
+  "description": "",
+  "version": "0.0.1",
+  "dependencies": {
+    "bootstrap-sass": "3.3.6",
+    "animate-sass": "~0.6.4"
+  },
+  "devDependencies": {}
+}

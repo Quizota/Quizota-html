@@ -1,0 +1,103 @@
+// Paginate
+.page-paginate {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  .paginate-ctrl {
+    a {
+      font-size: 13px;
+      font-weight: bold;
+      color: #323232;
+      text-indent: 9999px;
+      &:hover {
+        color: $link-color;
+      }
+      span.arrow {
+        color: #505050;
+      }
+    }
+    &.paginate-ctrl__prev {
+      width: 80px;
+    }
+    &.paginate-ctrl__next {
+
+      width: 80px;
+      text-align: right;
+    }
+  }
+  .paginate-ctrl.paginate-ctrl__number {
+    text-align: center;
+    width: 100%;
+    .mobile-pager {
+      display: none;
+    }
+  }
+}
+@media #{$tabletDown} {
+  .page-paginate {
+    &.has-mobile-style {
+      .paginate-ctrl {
+        a {
+          text-indent: 9999px;
+          &.current {
+            opacity: (0.2);
+            -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+            filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+          }
+          span.arrow {
+            background: url("/img/assets/page-btn.png") no-repeat top right;
+            background-size: 100%;
+            display: inline-block;
+            width: 8.5px;
+            height: 15px;
+
+          }
+          span.label {
+            display: none;
+          }
+        }
+        &.paginate-ctrl__next {
+          a {
+            span.arrow {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+      .paginate-ctrl.paginate-ctrl__number {
+        .mobile-pager {
+          display: inline-block;
+          font-weight: bold;
+          .pager-dash {
+            padding: 0 5px;
+          }
+        }
+        .page-paginate__number__list {
+          display: none;
+        }
+      }
+    }
+  }
+
+
+  .hide-xs {
+    display: none;
+  }
+}
+
+.super-img {
+  position: relative;
+  width: 100%;
+  background: no-repeat center center;
+  background-size: cover;
+  overflow: hidden;
+}
+.padding-right-1 {
+  padding-right: 1px;
+}
+.padding-left-1 {
+  padding-left: 1px;
+}

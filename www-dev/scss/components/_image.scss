@@ -1,0 +1,42 @@
+.image-module {
+    margin-bottom: 80px;
+    &.image-module__size-medium { 
+        margin-bottom: 50px; 
+        img {
+            width: 100%;
+        }
+        
+    }
+    &.image-module__size-small {
+         
+    }
+    .caption {
+            margin-top: 12px;
+            p {
+        font-size: 11px;
+        color: #8c8c8c;
+        margin-bottom: 0;
+        }
+    } 
+}
+.no-padding-right {
+    margin-right: -15px;
+}
+
+@media #{$desktopUp} {
+    .image-module.image-module__size-full.row.full {
+    margin-left: -32px;
+}
+    .no-padding-right {
+    margin-right: -34px;
+}
+}
+@media #{$tabletDown} {
+
+    .image-module {
+        .caption {
+            font-size: 10px;
+            line-height: 14px;
+        }
+    }
+}

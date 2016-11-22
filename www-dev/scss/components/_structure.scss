@@ -1,0 +1,68 @@
+#PageWrapper{
+	overflow-x: hidden;
+	padding-top: $headerHeight;
+}
+
+.container-fluid{
+	padding-left: $sidePadding;
+	padding-right: $sidePadding;
+	max-width: $screen-lg;
+	.row.full {
+		margin-left: -$sidePadding;
+		margin-right: -$sidePadding;
+		.col-md-12 {
+			padding: 0;
+		}
+	}
+}
+
+
+.main{
+	>.container-fluid, >.clear{
+	}
+	
+	>.clear{
+		max-width: $screen-lg;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+.standard-page{
+	.content-area{
+		padding-bottom: 200px;
+	}
+}
+
+
+
+
+@media #{$tabletDown}{
+	#PageWrapper{
+		html.ios.side-nav-open &{
+			position: fixed;
+			width: 100%;
+		}
+	}
+}
+
+
+
+@media #{$desktopUp}{
+	#PageWrapper{
+		padding-top: $headerHeightDesktop;
+		margin-top: 0 !important;
+		.full-page.has-second-level &{
+			padding-top: $headerHeightDesktop + $secondLevelHeight;
+		}
+	}
+
+	.container-fluid{
+		padding-left: $sidePaddingDesktop;
+		padding-right: $sidePaddingDesktop;
+		.row.full {
+			margin-left: -$sidePaddingDesktop;
+			margin-right: -$sidePaddingDesktop;
+		}
+	}
+
+}

@@ -1,0 +1,220 @@
+@mixin fl{
+	position: relative;
+	float: left;
+}
+@mixin flw($w) {
+	position: relative;
+	float: left;
+	width: $w;
+}
+@mixin calc($property, $expression) {
+  #{$property}: -moz-calc(#{$expression});
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}
+.full-page{
+	.supergraphic-modules{
+		.supergraphic-banner{
+			// height: 640px;
+			// background-size: cover;
+			// &.yellow{
+			// 	background: url(../img/landing/RUC-supergraphic-banner-BG-YELLOW.png) center center no-repeat;
+			// }
+			// &.green{
+			// 	background: url(../img/landing/RUC-supergraphic-banner-BG-GREEN.png) center center no-repeat;
+			// }
+			padding: 0;
+			overflow: hidden;
+			.supergraphic-img{
+				@include flw(100%);
+			}
+			.supergraphic-description{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 60%;
+				@include transform(translate(-50%,-50%));
+				text-align: center;
+				h2,h5,a{
+					@include flw(100%);
+					clear: both;
+				}
+				h2{
+					margin: 0;
+					font-weight: 700;
+				}
+				h5{
+					font-family: $font-family-sans-serif;
+					width: 80%;
+					font-size: 36px;
+					line-height: 44px;
+					margin: 0 10% 30px;
+					font-weight: normal;
+				}
+				a{
+					font-family: $the-branding-font;
+					font-size: 15px;
+					line-height: 28px;
+					color: #000;
+					font-weight: 600;
+					&:after{
+						content: '>';
+						position: relative;
+						display: inline-block;
+						margin-left: 10px;
+					}
+					&:hover{
+						text-decoration: underline
+					}
+				}
+			}
+		}
+	}
+}
+.standard-page{
+	.supergraphic-modules{
+		.supergraphic-banner{
+			// height: 465px;
+			// background-size: cover;
+			// &.yellow{
+			// 	background: url(../img/landing/RUC-supergraphic-banner-BG-YELLOW.png) center center no-repeat;
+			// }
+			// &.green{
+			// 	background: url(../img/landing/RUC-supergraphic-banner-BG-GREEN.png) center center no-repeat;
+			// }
+			padding: 0;
+			.supergraphic-img{
+				@include flw(100%);
+			}
+			.supergraphic-description{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 60%;
+				@include transform(translate(-50%,-50%));
+				text-align: center;
+				h3,h5,a{
+					@include flw(100%);
+					clear: both;
+				}
+				h3{
+					margin: 0;
+					font-weight: 700;
+				}
+				h5{
+					font-family: $font-family-sans-serif;
+					font-size: 28px;
+					line-height: 36px;
+					margin: 0 0 30px;
+					font-weight: normal;
+				}
+				a{
+					font-family: $font-family-sans-serif;
+					font-size: 13px;
+					line-height: 28px;
+					color: #000;
+					font-weight: bold;
+					&:after{
+						content: '>';
+						position: relative;
+						display: inline-block;
+						margin-left: 10px;
+					}
+					&:hover{
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media #{$desktopUp}{
+	.standard-page{
+		.supergraphic-modules{
+			margin-right: -$sidePaddingDesktop;
+		}
+	}
+
+}
+
+@media #{$tabletDown}{
+	.full-page{
+		.supergraphic-modules{
+			.supergraphic-banner{
+				// height: 465px;
+				.supergraphic-description{
+					width: 80%;
+					h2{
+						font-size: 36px;
+						line-height: 44px;
+					}
+				}
+			}
+		}
+	}
+	.standard-page{
+		.supergraphic-modules{
+			.supergraphic-banner{
+				// height: 340px;
+				.supergraphic-description{
+					width: 90%;
+				}
+			}
+		}
+	}
+
+}
+
+@media #{$mobileOnly}{
+	.full-page{
+		.supergraphic-modules{
+			.supergraphic-banner{
+				// height: 238px;
+				.supergraphic-description{
+					@include calc(width,'100% - 30px');
+					left: 15px;
+					@include transform(translate(0,-50%));
+					h2,h5{
+						font-size: 18px;
+						line-height: 22px;
+					}
+					h5{
+						margin-bottom: 22.5px;
+					}
+					a{
+						font-family: $font-family-sans-serif;
+						font-weight: bold;
+						font-size: 12px;
+						line-height: 24px;
+					}
+				}
+			}
+		}
+	}
+	.standard-page{
+		.supergraphic-modules{
+			.supergraphic-banner{
+				// height: 238px;
+				.supergraphic-description{
+					@include calc(width,'100% - 30px');
+					left: 15px;
+					@include transform(translate(0,-50%));
+					h3,h5{
+						font-size: 18px;
+						line-height: 22px;
+					}
+					h5{
+						margin-bottom: 22.5px;
+					}
+					a{
+						font-family: $font-family-sans-serif;
+						font-weight: bold;
+						font-size: 12px;
+						line-height: 24px;
+					}
+				}
+			}
+		}
+	}
+}

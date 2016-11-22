@@ -1,0 +1,285 @@
+.teamwork-contain {
+	//margin-bottom: 120px;
+	.teamwork-box {
+		background-color: #064f44;
+		padding-bottom: 99px;
+		padding-top: 40px;
+		h2 {
+			color: #fff;
+			text-align: center;
+		}
+		.content-box-teamwork {
+			position: relative;
+			width: 233px;
+			margin: 182px auto 100px;
+			.people-element {
+				font-family: $font-family-sans-serif;
+				font-weight: 700;
+				font-size: 8px;
+				color: #fff;
+				text-transform: uppercase;
+				position: absolute;
+				//max-width: 85px;
+				text-align: center;
+				line-height: 10px;
+				&:before {
+					content: '';
+					position: absolute;
+					background-image: url('../../img/teamwork/people-mobile-2x.png');
+					background-position: 100% 100%;
+					width: 48px;
+					height: 48px;
+					top: -50px;
+					left: 18px;
+				}
+				&.people-1 {
+					top: -25px;
+					left: -16px;
+					&:before {
+						left: -6px;
+					}
+				}
+				&.people-2 {
+					@extend .people-1;
+					right: -13px;
+					left: auto;
+					&:before {
+						left: -12px;
+					}
+				}
+				&.people-3 {
+					bottom: -89px;
+					top: auto;
+					left: -16px;
+					&:before {
+						left: 0;
+					}
+				}
+				&.people-4 {
+					@extend .people-3;
+					right: -37px;
+					left: auto;
+					&:before {
+						left: 18px;
+					}
+				}
+			}
+			/**Circle Styles**/
+			.circle-space {
+				position: relative;
+				.circle {
+
+					display: block;
+					background-color: transparent;
+					color: #222;
+					text-align: center;
+					&:after {
+						display: block;
+						padding-bottom: 100%;
+						width: 100%;
+						height: 0;
+						border-radius: 50%;
+						background-color: #fc5e61;
+						content: "";
+					}
+				}
+
+				.circle__inner {
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+				}
+
+				.circle__wrapper {
+					display: table;
+					width: 100%;
+					height: 100%;
+				}
+
+				.circle__content {
+					display: table-cell;
+					padding: 1em;
+					vertical-align: middle;
+					color: #fff;
+					h4 {
+						font-weight: 600;
+						line-height: 0;
+						margin: 0
+					}
+					p {
+						margin: 24px 20px 0;
+					}
+				}
+				.line-1 {
+					position: absolute;
+					width: 41px;
+					height: 1px;
+					background: #fc5e61;
+					top: 20px;
+					left: 0;
+					@include transform(rotate(45deg));
+				}
+				.line-2 {
+					@extend .line-1;
+					right: 0;
+					left: auto;
+					@include transform(rotate(-45deg));
+				}
+				.line-3 {
+					@extend .line-1;
+					bottom: 18px;
+					left: 0;
+					top: auto;
+					@include transform(rotate(-45deg));
+				}
+				.line-4 {
+					@extend .line-1;
+					top: auto;
+					bottom: 18px;
+					right: 0;
+					left: auto;
+					@include transform(rotate(45deg));
+				}
+			}
+		}
+		.tit-description {
+			color: #fff;
+			text-align: center;
+			font-weight: 600;
+			margin: 0 20px 18px;
+			padding-top: 43px;
+		}
+		.text-description {
+			color: #fff;
+			text-align: center;
+			margin: 0 20px;
+		}
+	}
+	@media #{$desktopUp}{
+		.teamwork-box {
+			h2 {
+				text-align: left;
+				margin-top: 143px;
+			}
+			.tit-description {
+				text-align: left;
+				font-size: 16px;
+				line-height: 25px;
+				margin: 0 20px 25px;
+			}
+			.text-description {
+				text-align: left;
+				font-size: 13px;
+				line-height: 20px;
+			}
+			.content-box-teamwork {
+				margin: 290px 0 12px;
+				width: 33.3333333333%;
+				.people-element {
+					font-size: 11px;
+					line-height: 14px;
+					&:before {
+						background-image: url("../../img/teamwork/people-1x.png");
+						width: 20px;
+						height: 53px;
+						top: -68px;
+					}
+					&.people-1 {
+						top: -43%;
+						left: -32%;
+						&:before {
+							left: 14px;
+						}
+					}
+					&.people-2 {
+						top: 60%;
+						left: -65%;
+						right: auto;
+						&:before {
+							left: 6px;
+						}
+					}
+					&.people-3 {
+						top: 60%;
+						right: -70%;
+						left: auto;
+						&:before {
+							left: 22px;
+						}
+					}
+					&.people-4 {
+						bottom: -60%;
+						top: auto;
+						left: -44%;
+						right: auto;
+						&:before {
+							left: 49px;
+						}
+					}
+				}
+				.circle-space {
+					.circle__content {
+						h4 {
+							font-size: 28px;
+							font-weight: 700;
+						}
+						p {
+							font-size: 13px;
+							line-height:20px;
+							margin: 33px auto 0;
+							max-width: 209px;
+						}
+					}
+					.line-1 {
+						width: 100%;
+						left: -35%;
+						top: 0;
+						&:before {
+							position: absolute;
+							content: '';
+							height: 1px;
+							width: 10px;
+							background: #fc5e61;
+							top: -4px;
+							left: 25%;
+							@include transform(rotate(45deg));
+						}
+						&:after {
+							position: absolute;
+							content: '';
+							height: 1px;
+							width: 10px;
+							background: #fc5e61;
+							bottom: -4px;
+							left: 25%;
+							@include transform(rotate(-45deg));
+						}
+					}
+					.line-2 {
+						width: 100%;
+						@include transform(rotate(0deg));
+						top: 50%;
+						left: -53.33333%;
+					}
+					.line-3 {
+						width: 100%;
+						@include transform(rotate(-180deg));
+						top: 50%;
+						right: -53.33333%;
+						left: auto;
+					}
+					.line-4 {
+						width: 100%;
+						@include transform(rotate(-45deg));
+						top: auto;
+						left: -35%;
+						bottom: 0;
+					}
+				}
+			}
+		}
+	}
+}

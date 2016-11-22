@@ -1,0 +1,66 @@
+@mixin fl{
+  position: relative;
+  float: left;
+}
+@mixin flw($w) {
+  position: relative;
+  float: left;
+  width: $w;
+}
+.large-header-container{
+  .large-header{
+    padding: 165px 0 120px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .large-header-link{
+      @include flw(83.333333%);
+      margin: 0 0 0 50%;
+      @include transform(translateX(-50%));
+      text-align: center;
+      h1,a{
+        @include flw(100%);
+        color: #fff;
+      }
+      h1{
+        font-size: 48px;
+        line-height: 58px;
+        margin: 0 0 10px;
+      }
+      a{
+        float: none;
+        width: auto;
+        font-size: 13px;
+        font-family: $font-family-sans-serif;
+        font-weight: bold;
+        &:after{
+          content: '>';
+          position: absolute;
+          left: 100%;
+          top: 0;
+          margin-left: 10px;
+        }
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+@media #{$mobileOnly}{
+  .large-header-container{
+    .large-header{
+      padding: 110px 0 60px;
+      .large-header-link{
+        width: 90%;
+        h1{
+          font-size: 27px;
+          line-height: 32px;
+        }
+        a{
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

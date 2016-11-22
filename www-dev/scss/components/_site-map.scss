@@ -1,0 +1,33 @@
+.site-map {
+	.option-1, .option-2 {
+		max-width: $moduleMaxWidthDesktop;
+		margin-top: $moduleMarginTop;
+	}
+	.site-map-content {
+		margin: 40px 0 100px;
+		p {
+			color: #323232;
+			a {
+				color: #323232;
+				text-decoration: underline;
+				&:hover {
+					color: #40b88c;
+				}
+			}
+		}
+	}
+	@media #{$desktopUp}{
+		.option-1, .option-2 {
+			margin-top: $moduleMarginTopDesktop;
+		}
+		.option-1 {
+			.site-map-content {
+				p {
+					span {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,191 @@
+.teaching-tool-box {
+	//margin-top: 60px;
+	h2 {
+		margin: -5px 0 0;
+		text-align: center;
+	}
+	.description {
+		text-align: center;
+		margin-top: 17px;
+	}
+	.teaching-graphic {
+		position: relative;
+		margin-top: 37px;
+		margin-bottom: 70px;
+		.graphic {
+			display: inline-block;
+			width: 52%;
+			&.right {
+				position: absolute;
+				z-index: 10;
+				right: 0;
+				.circle {
+					background-color: #1fb7f5;
+				}
+				.annotation {
+					.text-annotation {
+						max-width: 142px !important;
+						margin-left: -73px !important;
+					}
+				}
+			}
+		}
+		.col {
+			display: inline-block;
+			position: relative;
+			width: 100%;
+			padding: 0;
+			background-color: transparent;
+			border-top: none;
+			.spacer {
+				position: relative;
+				padding-top: 100%;
+			}
+
+		}
+		.circle {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: #020b79;
+			color: #333;
+			border-radius: 50%;
+			box-sizing: border-box;
+			text-align: center;
+			display: block;
+			padding: 5px;
+			&:before {
+				content: '';
+				display: inline-block;
+				height: 100%;
+				vertical-align: middle;
+				margin-right: -2%;
+			}
+			-webkit-transition: all 1s ease-out;
+			-moz-transition: all 1s ease-out;
+			-o-transition: all 1s ease-out;
+			transition: all 1s ease-out;
+		}
+
+		.circle {
+			color: #fff;
+			& > .wrapcontent {
+				display: inline-block;
+				vertical-align: middle;
+				font-family: $the-branding-font;
+				font-weight: 700;
+				font-size: 9px;
+				.number-circle {
+					font-size: 37px;
+				}
+			}
+		}
+		.up {
+			opacity: .5;
+			position: absolute;
+			z-index: 12;
+		}
+		.annotation {
+			position: relative;
+			margin-top: -10px;
+			.line-annotation {
+				width: 40px;
+				height: 1px;
+				background-color: #000;
+				@include transform(rotate(90deg));
+				position: absolute;
+				left: 50%;
+				margin-left: -20px;
+				&:before {
+					content: '';
+					width: 9px;
+					height: 9px;
+					-webkit-border-radius: 100%;
+					-moz-border-radius: 100%;
+					border-radius: 100%;
+					background: #000;
+					position: absolute;
+					top: -4px;
+				}
+			}
+			.text-annotation {
+				font-family: $font-family-sans-serif;
+				font-weight: 700;
+				font-size: 10px;
+				position: absolute;
+				top: 27px;
+				text-align: center;
+				max-width: 70px;
+				left: 50%;
+				margin-left: -38px;
+				line-height: 11px;
+			}
+		}
+	}
+
+	@media #{$desktopUp}{
+		//margin-top: 120px;
+		.description {
+			font-size: 13px;
+		}
+		.teaching-graphic {
+			margin-top: 47px;
+			margin-bottom: 207px;
+			.graphic {
+				width: 33.3333333333%;
+				.left {
+					right: -17px;
+				}
+				&.right {
+					right: auto;
+					margin-left: -17px;
+					.annotation {
+						margin-left:0;
+						.text-annotation {
+							margin-left: -85px !important;
+							max-width: 200px !important;
+						}
+					}
+				}
+			}
+			.circle {
+				& > .wrapcontent {
+					font-size: 20px;
+					.number-circle {
+						font-size: 80px;
+					}
+					.text-circle {
+						margin-top: 25px;
+
+					}
+				}
+			}
+			.annotation {
+				margin-left: 17px;
+				width: 100%;
+				&.annotation-left {
+					.text-annotation {
+						left: 0;
+						margin-left: 0;
+					}
+				}
+				.line-annotation {
+					//margin-left: -17px;
+					width: 65px;
+					margin-left: -33px;
+				}
+				.text-annotation {
+					font-family: $the-branding-font;
+					font-size: 16px;
+					font-weight: 600;
+					max-width: 100%;
+					width: 100%;
+					line-height: 21px;
+					top: 48px;
+				}
+			}
+		}
+	}
+}

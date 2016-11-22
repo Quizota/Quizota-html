@@ -1,0 +1,313 @@
+.education-structure-container {
+	//margin-top: 60px;
+	//margin-bottom: 100px;
+	.education-structure-box {
+		h2 {
+			margin: -5px 0 0;
+			text-align: center;
+		}
+		.description {
+			text-align: center;
+			margin-top: 17px;
+		}
+		.education-structure-content {
+			margin-top: 53px;
+			// margin-right: -8px;
+			margin-left: -$sidePadding;
+			margin-right: -$sidePadding;
+			//overflow-y: hidden;
+			overflow: hidden;
+			background: #fff;
+			//@include invisible-scrollbar;
+			//overflow: scroll;
+			.scroll-box {
+				overflow-x: scroll;
+				padding-bottom: 10px;
+				margin-bottom: -12px;
+			}
+			&::-webkit-scrollbar, &::-webkit-scrollbar-track {
+				display: none;
+			}
+			.box-dark-blue {
+				border-left: $sidePadding solid white;
+				border-right: $sidePadding solid white;
+				//background: #05524a;
+				width: 866px + $sidePadding*2;
+				display: -webkit-flex;
+				display: flex;
+				color: #fff;
+				//height: 219px;
+				margin: auto;
+				.content-left {
+					float: left;
+					width: 291px;
+					//background: transparent;
+					position: relative;
+					text-align: center;
+					background: #05524a;
+				}
+				.box-light-blue {
+					text-align: center;
+					position: relative;
+					float: left;
+					@include calc(width, '100% - 291px');
+					background: #2d9b73;
+					.arrow-dark-blue {
+						position: absolute;
+						top: 53%;
+						width: 0;
+						height: 0;
+						border-left: 8px solid #05524a;
+						border-top: 8px solid transparent;
+						border-bottom: 8px solid transparent;
+
+					}
+					.ex-box {
+						opacity: .6;
+					}
+					.text-box {
+						max-width: 270px;
+					}
+				}
+				.th-cont {
+					border-left: 1px solid #05524a;
+					border-right: 1px solid #05524a;
+					height: 30px;
+					background: #fff;
+					text-align: center;
+					font-family: $the-branding-font;
+					font-weight: 600;
+					font-size: 15px;
+					color: #000;
+					margin-top: -1px;
+					&.right {
+						border-left: 0;
+						border-right: 1px solid #2d9b73;
+						display: table;
+						width: 100%;
+						.th-cont-col {
+							width: 50%;
+							display: table-cell;
+							&.col-1 {
+								//border-right: 1px dotted #2d9b73;
+							}
+						}
+					}
+				}
+				.title-box {
+					font-family: $the-branding-font;
+					font-weight: 700;
+					font-size: 25px;
+					margin: 35px 8px 6px;
+				}
+				.ex-box {
+					font-family: $font-family-sans-serif;
+					font-weight: 700;
+					font-size: 8px;
+					opacity: .4;
+				}
+				.text-box {
+					font-weight: 700;
+					max-width: 200px;
+					margin: 20px auto 44px;
+				}
+			}
+			&.option2 {
+				.box-dark-blue {
+					.content-left {
+						.cont-main {
+							display: table;
+							height: 191px;
+							margin: auto;
+							p {
+								display: table-cell;
+								vertical-align: middle;
+								line-height: 1;
+								.ex-box {
+									line-height: 0;
+								}
+							}
+						}
+						.arrow-light-blue {
+							position: absolute;
+							top: 53%;
+							width: 0;
+							height: 0;
+							border-left: 8px solid #2d9b73;
+							border-top: 8px solid transparent;
+							border-bottom: 8px solid transparent;
+						}
+					}
+					.th-cont {
+						border-right: 0;
+					}
+					.title-box {
+						font-size: 22px;
+						line-height: 30px;
+					}
+				}
+				.box-blue {
+					background: #2d9b73;
+					&.last {
+						.th-cont {
+							border-right: 1px solid #2d9b73;
+						}
+					}
+					.arrow-dark-blue {
+						position: absolute;
+						top: 53%;
+						width: 0;
+						height: 0;
+						border-left: 8px solid #05524a;
+						border-top: 8px solid transparent;
+						border-bottom: 8px solid transparent;
+
+					}
+					.ex-box {
+						opacity: .6;
+					}
+					.text-box {
+						max-width: 270px;
+					}
+				}
+			}
+			&.option3 {
+				@extend .option2;
+				.box-dark-blue {
+					.content-left {
+						width: 582px;
+						&.last {
+							.th-cont {
+								border-right: 1px solid #2d9b73;
+							}
+						}
+						.col-p3 {
+							width: 50%;
+							float: left;
+							display: inline-block;
+						}
+					}
+					.title-box {
+						font-size: 25px;
+					}
+				}
+
+			}
+		}
+
+	}
+
+	@media #{$desktopUp}{
+		//margin-top: 120px;
+		//margin-bottom: 150px;
+		.education-structure-box {
+			.description {
+				font-size: 13px;
+			}
+			.education-structure-content {
+				// margin-right: 0;
+				margin-top: 57px;
+				overflow-x: hidden;
+				.scroll-box {
+					overflow-x: hidden;
+					padding-bottom: 0;
+					margin-bottom: 0;
+				}
+				.box-dark-blue {
+					width: 100%;
+					height: 245px;
+					.content-left {
+						width: 33.3333333%;
+					}
+					.box-light-blue {
+						width: 66.66666666%;
+						.arrow-dark-blue {
+							border-left: 12px solid #05524a;
+							border-top: 12px solid transparent;
+							border-bottom: 12px solid transparent;
+
+						}
+						.text-box {
+							max-width: 270px;
+						}
+					}
+					.th-cont {
+						font-size: 16px;
+						height: 34px;
+					}
+
+					.title-box {
+						font-size: 28px;
+						margin-top: 44px;
+						margin-bottom: 11px;
+					}
+					.ex-box {
+						font-size: 9px;
+					}
+					.text-box {
+						font-size: 13px;
+						margin-top: 23px;
+						line-height: 19px;
+						margin-bottom: 40px;
+						max-width: 250px;
+					}
+				}
+				&.option2 {
+					.box-dark-blue {
+						height: 244px;
+						.content-left {
+							width: 25%;
+							.cont-main{
+								height: 211px;
+							}
+						}
+
+					}
+				}
+				&.option3 {
+					.box-dark-blue {
+						height: 244px;
+						.content-left {
+							width: 50%;
+						}
+						.title-box {
+							font-size: 28px;
+						}
+					}
+
+				}
+			}
+		}
+	}
+	@media #{$mobileOnly}{
+		.education-structure-box {
+			.education-structure-content {
+				overflow: hidden;
+				background: #fff;
+				@include invisible-scrollbar;
+				//overflow: scroll;
+				.scroll-box {
+					overflow-x: scroll;
+					padding-bottom: 10px;
+					margin-bottom: -12px;
+				}
+				&::-webkit-scrollbar, &::-webkit-scrollbar-track {
+					display: none; 
+				}
+			}
+		}
+	}
+
+}
+
+.dotted-spaced {
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient( startColorStr=#0C93C0, EndColorStr=#FFFFFF )"; /* IE8-9, ColorZilla Ultimate CSS Gradient Generator uses SVG bg image for IE9 */
+
+	background-image: -webkit-linear-gradient(top, #05524a 29%, rgba(255, 255, 255, 0) 0%); /* Chrome10-25, Saf5.1-Saf6, iOS -6.1, Android -4.3 */
+	background-image: -moz-linear-gradient(top, #05524a 29%, rgba(255, 255, 255, 0) 0%); /* Fx3.6-15 */
+	background-image: -o-linear-gradient(top, #05524a 29%, rgba(255, 255, 255, 0) 0%); /* Op11.10-12.02 */
+	background-image: linear-gradient(to bottom, #05524a 29%, rgba(255, 255, 255, 0) 0%); /* W3C, Fx16+, Chrome26+, IE10+, Op12.10+, Saf6.1+ */
+	background-position: right;
+	background-size: 1px 4px;
+	background-repeat: repeat-y;
+}

@@ -1,0 +1,113 @@
+// &::-webkit-scrollbar-button       {}
+// &::-webkit-scrollbar-track        {}
+// &::-webkit-scrollbar-track-piece  {}
+// &::-webkit-scrollbar-corner       {}
+// &::-webkit-resizer                {}
+
+$foregroundColor: gray;
+$backgroundColor: white;
+$thumbBorderColor: #999;
+
+@mixin scrollbar{
+
+	scrollbar-face-color: #e3dfcb;
+	scrollbar-arrow-color: #e3dfcb;
+	scrollbar-track-color: #f5f2e5;
+	scrollbar-shadow-color: #e3dfcb;
+	scrollbar-highlight-color: #e3dfcb;
+	scrollbar-3dlight-color: #e3dfcb;
+	scrollbar-darkshadow-Color: #e3dfcb;
+
+	// &::-webkit-scrollbar{
+	// 	width:7px;
+	// 	background: $backgroundColor;
+	// }
+
+	// &::-webkit-scrollbar-thumb{
+	// 	background: $foregroundColor;
+	// }
+
+	// &::-webkit-scrollbar-corner{
+	// 	background: $backgroundColor;
+	// }
+	//
+	&::-webkit-scrollbar {
+	    width: 6px;
+	    // width: 0;
+	    // @include transition(width .3s);
+	}
+
+	// &:hover{
+	// 	&::-webkit-scrollbar {
+	// 		width: 6px;
+	// 	}
+	// }
+
+	&::-webkit-scrollbar-track {
+	    background: $backgroundColor;
+	}
+
+
+	&::-webkit-scrollbar-thumb {
+	    // border-radius: 10px;
+	    border: 1px solid $thumbBorderColor;
+	    // background: $foregroundColor;
+	    background: transparent;
+	    border-radius: 7px;
+	    @include transition(background .3s);
+	    &:hover{
+	    	background: hsla(0,0%,0%,.3) !important;
+	    }
+	}
+
+	&:hover{
+		&::-webkit-scrollbar-thumb {
+			background: $foregroundColor;
+		}
+	}
+
+}
+
+@mixin custom-scrollbar($bgColor,$fgColor,$_thumbBorderColor){
+	$backgroundColor: $bgColor;
+	$foregroundColor: $fgColor;
+	$thumbBorderColor: $_thumbBorderColor;
+	@include scrollbar;
+}
+
+@mixin invisible-scrollbar(){
+	$backgroundColor: hsla(0,0%,100%,0);
+	$foregroundColor: hsla(0,0%,100%,0);
+	$thumbBorderColor: hsla(0,0%,100%,0);
+	@include scrollbar;
+}
+
+@mixin light-scrollbar(){
+	// $backgroundColor: fade-out(black,.95);
+	$backgroundColor: white;
+	$foregroundColor: #cdcdcd;
+	// $thumbBorderColor: fade-out(black,.95);
+	$thumbBorderColor: white;
+	@include scrollbar;
+}
+
+@mixin dark-scrollbar(){
+	$backgroundColor: white;
+	$foregroundColor: hsla(0,0%,0%,.15);
+	$thumbBorderColor: white;
+	@include scrollbar;
+}
+
+%light-scrollbar{
+	@include light-scrollbar();
+	html.touch &{
+		display: none;
+	}
+}
+
+%dark-scrollbar{
+	@include dark-scrollbar();
+	html.touch &{
+		display: none;
+	}
+}

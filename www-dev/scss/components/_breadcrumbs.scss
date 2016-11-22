@@ -1,0 +1,30 @@
+.breadcrumb {
+	padding: 20px 0 40px;
+	list-style: none;
+	li {
+		display: inline;
+		font-size:11px;
+		a {
+			color: #787878;
+			&:hover{
+				border-bottom: 1px solid;
+			}
+		}
+		&:after{
+			padding: 8px;
+			color: #787878;
+			content: " > ";
+		}
+	}
+	//li + li:before {
+	//	padding: 8px;
+	//	color: #787878;
+	//	content: " > ";
+	//}
+	@media #{$desktopUp}{
+		padding: 30px 0 60px;
+		&:after{
+			padding: 11px;
+		}
+	}
+}
