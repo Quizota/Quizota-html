@@ -257,3 +257,10 @@ textarea, input { outline: none; }
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
+
+.relative {
+	position: relative;
+	height: 150px;
+	overflow: hidden;
+	width: 100%;
+}

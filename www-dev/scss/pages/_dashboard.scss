@@ -15,20 +15,11 @@ body.dashboard {
       background: #fff;
       border-top: 1px solid #eee;
     }
-    .userProfile__info {
+    .ProfileHeader {
       background-position: 50%;
       background-size: cover;
       background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("//quizup-players.imgix.net/players/1007926412194008534/pictures/m8bcz7icib/wallpaper/original.jpg?auto=format&q=50&w=420");
-      .userProfile__profile {
-        padding: 30px 10px 0 35px;
-        .userProfile__imageBox {
-          float: left;
-          margin-right: 20px;
-        }
-      }
-      .userProfile__stats {
-        padding: 15px 0;
-      }
+
     }
 
   }
@@ -151,13 +142,280 @@ a.MyMiniProfile__name {
 }
 
 .home__activity {
-    background: #fff;
+    background: #00b5d9;
     border-radius: 4px;
     box-shadow: 0 2px 10px rgba(0,0,0,.1);
     padding: 150px;
+    background-image: url(/img/patterns/gameBg.svg);
+    min-height: 1000px;
 }
 
 .play-action {
     text-align: center;
     margin: 200px auto;
+}
+
+.ProfileSidebar__header {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: left;
+    margin: 14px 0 0 20px;
+}
+.ProfileSidebar__statistics__bar {
+    padding: 0 30px;
+}
+.GameStats {
+    margin: 28px 0 34px;
+    height: 16px;
+    background: #eee;
+    border-radius: 8px;
+}
+.u-clearfix:after, .u-clearfix:before {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+.GameStats__part--won {
+    border-right: 4px solid #fff;
+    background: #02d174;
+    border-radius: 8px 0 0 8px;
+}
+.GameStats__part {
+    position: relative;
+    float: left;
+    height: 16px;
+}
+.GameStats__label {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    margin: 0 -30px 1px;
+    color: #666;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .02em;
+    text-align: center;
+    text-transform: uppercase;
+}
+.GameStats__percentage {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 3px -20px 0;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+}
+.GameStats__percentage--won {
+    color: #02d174;
+}
+
+.GameStats__part--drawn {
+    background: #ffbe1a;
+}
+.GameStats__percentage--drawn {
+    color: #ffbe1a;
+}
+.GameStats__label--right {
+    margin-right: -10px;
+}
+.GameStats__part--lost {
+    border-left: 4px solid #fff;
+    background: #ff5454;
+    border-radius: 0 8px 8px 0;
+}
+.GameStats__percentage--lost {
+    color: #ff5454;
+}
+.ProfileCounts__item {
+    position: relative;
+    float: left;
+    display: block;
+    width: 33.33%;
+    height: 70px;
+    padding: 12px 0 15px;
+    border-right: 1px solid #eee;
+    text-align: center;
+}
+.ProfileCounts__item__string {
+    color: #999;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+.ProfileCounts__item__value {
+    font-size: 32px;
+    line-height: 1em;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-color .2s;
+    transition: border-color .2s;
+}
+.ProfileCounts__item__value--games {
+    color: #ff5454;
+}
+.ProfileCounts__item__value--elo {
+    color: #02d174;
+}
+.ProfileCounts__item__value--winrate {
+    color: #00b5d9;
+}
+
+.ProfileSidebar__list {
+    padding: 20px 14px 16px;
+}
+.ProfileSidebar__list__item {
+    float: left;
+    width: 25%;
+}
+.ProfileSidebar__achievementIconWrapper {
+    display: block;
+    text-align: center;
+}
+.ProfileSidebar__achievement__icon {
+    border-radius: 15px;
+    width: 70px;
+    height: 70px;
+}
+.ProfileSidebar__achievement__name {
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+}
+.ProfileSidebar__header {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: left;
+    margin: 14px 0 0 20px;
+}
+.ProfileHeader__banners {
+    margin-top: 10px;
+}
+.ProfileBanners {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+.ProfileBanner {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: absolute;
+    left: 72px;
+}
+.ProfileBanner__banner {
+    z-index: 0;
+    margin: 0 auto;
+    width: 280px;
+}
+.ProfileBanner__content {
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 100%;
+    color: #333;
+    font-weight: 700;
+    text-shadow: 0 1px 0 hsla(0,0%,100%,.4);
+}
+.ProfileBanner__content__title {
+    margin-top: 5px;
+    font-size: 12px;
+}
+.ProfileBanner__content__subtitle {
+    margin-top: 8px;
+    font-size: 10px;
+}
+.ProfileHeader__banners {
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 50px;
+
+}
+
+.ProfileBanners {
+    position: relative;
+    display: block;
+    overflow: hidden;
+
+}
+
+.ProfileBanners__breadcrumbs {
+    font-size: 10px;
+    margin-top: 50px;
+}
+.ProfileHeader__bio {
+    padding: 0 20px;
+    margin-top: 5px;
+    font-size: 12px;
+}
+.ProfileHeader {
+    position: relative;
+    padding: 20px 0 10px;
+    background-size: 100% auto;
+    background-position: 0;
+    border-radius: 4px 4px 0 0;
+    text-align: center;
+    color: #fff;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+.ProfilePicture {
+    position: relative;
+}
+.ProfileHeader__image {
+    border: 5px solid #fff;
+}
+.ProfileHeader__nameBox {
+    padding: 0 20px;
+    margin-top: 15px;
+    font-size: 24px;
+}
+.ProfileHeader__name {
+    display: inline-block;
+    line-height: 1em;
+    font-weight: 500;
+    word-break: break-word;
+}
+.ProfileHeader__age {
+    margin-left: 15px;
+}
+.ProfileHeader__title {
+    margin-top: 10px;
+    font-size: 12px;
+}
+.ProfileHeader__locationBox {
+    margin-top: 5px;
+}
+.ProfileHeader__locationBox__flag {
+    box-sizing: content-box;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #fff;
+    margin-bottom: -4px;
+    margin-right: 5px;
+}
+.ProfileHeader__locationBox__location {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+}
+.ProfileSidebar__divider {
+    border: 0;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+}
+.ProfileCounts__item:last-child {
+    border-right: 0;
 }

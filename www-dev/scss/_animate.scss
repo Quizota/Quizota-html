@@ -104,3 +104,10 @@ $use-fadeIn: true;
 
 
 // CUSTOM
+@keyframes spin {
+  to { transform: rotate(.5turn); }
+}
+
+@keyframes bg {
+  50% { background: #655; }
+}

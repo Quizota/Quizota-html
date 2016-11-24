@@ -49,6 +49,12 @@
 @import './pages/landing';
 @import './pages/intro';
 @import './pages/dashboard';
+@import './pages/finding',
+        './components/matchhub',
+        './bourbon/addons/progress',
+        './components/games/greateNumber',
+        './pages/result',
+        './pages/settings';
 
 html{
 	font-size: $emBase;

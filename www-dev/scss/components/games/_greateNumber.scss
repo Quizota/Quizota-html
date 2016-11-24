@@ -1,0 +1,32 @@
+.findGreateNumber {
+    padding: 50px;
+    padding-bottom: 200px;
+}
+.listNumber {
+    li {
+        width: 9%;
+        float: left;
+        height: 75px;
+        background: #fff;
+        display:box;
+        box-pack:center;
+        box-align:center;
+        display:-webkit-box;
+        -webkit-box-pack:center;
+        -webkit-box-align:center;
+        display:-moz-box;
+        -moz-box-pack:center;
+        -moz-box-align:center;
+        display:-ms-flexbox;
+        -ms-flex-pack:center;
+        -ms-flex-align:center;
+        border: 3px solid $brand-primary;
+        margin: 2px;
+        span {
+            font-size: 30px;
+            color: $brand-primary;
+            font-weight: bold;
+            display: block;
+        }
+    }
+}
